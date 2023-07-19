@@ -4,6 +4,7 @@ let equal = document.getElementById('equal');
 let clear = document.getElementById('clear');
 let deletebtn = document.getElementById('delete');
 
+
 button.forEach((button) => {
     button.addEventListener("click", () => {
         const buttonText = button.textContent;
@@ -12,7 +13,6 @@ button.forEach((button) => {
             calculateResult();
         } else if (buttonText === "Clear") {
             clearResult();
-            inputbox.focus();
         } else if (buttonText === "Delete") {
             deleteLastCharacter();
         } else {
@@ -27,18 +27,10 @@ function updateResult(value) {
 
 function clearResult() {
     inputbox.value = "";
-    result.focus();
 }
 
 function deleteLastCharacter() {
-    const deletedCharacter = inputbox.value.slice(-1);
-    inputbox.value = inputbox.value.slice(0, -1);
-    announceDeleted(deletedCharacter);
-}
-
-function announceDeleted(value) {
-    const live = document.getElementById('live');
-    live.textContent = `Deleted: ${value}`;
+    result.value = result.value.slice(0, -1);
 }
 
 function calculateResult() {
