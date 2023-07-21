@@ -6,26 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /* menubar horizontal */
     .menubar ul {
       display: inline-flex;
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
+     
+    /* space between menubar items */
     .menubar ul li {
-      position: relative; /* Add this to create a stacking context */
+      position: relative;
       margin-right: 20px;
     }
-
-    .dropdown-icon {
+   
+     .dropdown-icon {
       position: absolute;
-      top: 50%;
-      right: 0; /* Adjust this value to position the dropdown icon correctly */
-      transform: translateY(-50%);
+      top: 20%;
+      right: -1em;
     }
-
-    /* Hide submenus by default */
+     
+    /* submenu items hidden */
     .about-us,
     .contact {
       display: none;
@@ -36,12 +37,14 @@
       padding: 10px;
       min-width: 120px;
     }
-
+     
+    /* space between submenu items */
     .about-us li,
     .contact li {
       padding: 5px 0;
     }
-     /* Vertically display the submenu items */
+     
+    /*submenu items Vertical */
     .about-us ul,
     .contact ul {
       display: flex;
@@ -56,24 +59,27 @@
 <body>
   <div class="menubar" id="menu">
     <ul role="menubar">
-      <li id="menu1" class="menu" role="menuitem" aria-haspopup="true" aria-selected="true" onclick="tabClick(1)" tabindex="0"><a href="#home"></a>Home</li>
-      <li id="menu2" class="menu" role="menuitem" aria-haspopup="true" aria-selected="false" onclick="tabClick(2)" tabindex="-1"><a href="#aboutus"></a>About us
+      <li id="menu1" class="menu" role="menuitem"  aria-selected="true" onclick="tabClick(1)"
+        tabindex="0"><a href="#home">Home</a></li>
+      <li id="menu2" class="menu" role="menuitem"  aria-selected="false" onclick="tabClick(2)"
+        tabindex="-1"><a href="#aboutus">About us</a>
         <span class="dropdown-icon">&#9662;</span>
-        <div class="about-us" id="content2">
+        <div class="about-us" id="content2" role="menu" aria-expanded="false">
           <ul>
-            <li><a role="menuitem" href="#">1</a></li>
-            <li><a role="menuitem" href="#">2</a></li>
-            <li><a role="menuitem" href="#">3</a></li>
+            <li><a role="menuitem" id="Overview" href="#">Overview</a></li>
+            <li><a role="menuitem" href="#">Administration</a></li>
+            <li><a role="menuitem" href="#">Facts</a></li>
           </ul>
         </div>
       </li>
-      <li id="menu3" class="menu" role="menuitem" aria-haspopup="true" aria-selected="false" onclick="tabClick(3)" tabindex="-1"><a href="#contact"></a>Contact
+      <li id="menu3" class="menu" role="menuitem"  aria-selected="false" onclick="tabClick(3)"
+        tabindex="-1"><a href="#Admissions">Admissions</a>
         <span class="dropdown-icon">&#9662;</span>
-        <div class="contact" id="content3">
+        <div class="contact" id="content3" role="menu" aria-expanded="false">
           <ul>
-            <li><a role="menuitem" href="#">a</a></li>
-            <li><a role="menuitem" href="#">b</a></li>
-            <li><a role="menuitem" href="#">c</a></li>
+            <li><a role="menuitem" id="Apply" href="#">Apply</a></li>
+            <li><a role="menuitem" href="#">Tuition</a></li>
+            <li><a role="menuitem" href="#">Sign up</a></li>
           </ul>
         </div>
       </li>
@@ -83,58 +89,6 @@
     <h1>This is my home page</h1>
   </div>
 
-  <script>
-    function tabClick(menubar) {
-      let menu1 = document.getElementById("menu1");
-      let menu2 = document.getElementById("menu2");
-      let menu3 = document.getElementById("menu3");
-      let x = document.getElementById("content1");
-      let y = document.getElementById("content2");
-      let z = document.getElementById("content3");
-
-      menu1.setAttribute("tabindex", "-1");
-      menu2.setAttribute("tabindex", "-1");
-      menu3.setAttribute("tabindex", "-1");
-      menu1.setAttribute("aria-selected", "false");
-      menu2.setAttribute("aria-selected", "false");
-      menu3.setAttribute("aria-selected", "false");
-    //   x.style.display = "none";
-      y.style.display = "none";
-      z.style.display = "none";
-
-      if (menubar === 1) {
-        // x.style.display = "block";
-        menu1.setAttribute("aria-selected", "true");
-        menu1.setAttribute("tabindex", "0");
-        menu1.focus();
-      } else if (menubar === 2) {
-        y.style.display = "block";
-        menu2.setAttribute("aria-selected", "true");
-        menu2.setAttribute("tabindex", "0");
-        menu2.focus();
-      } else if (menubar === 3) {
-        z.style.display = "block";
-        menu3.setAttribute("aria-selected", "true");
-        menu3.setAttribute("tabindex", "0");
-        menu3.focus();
-      }
-    }
-
-    const menu = document.getElementById("menu");
-menu.addEventListener("keydown", e => {
-      if (e.key === "ArrowRight") {
-        if (e.target.nextElementSibling) {
-          e.target.nextElementSibling.focus();
-        }
-      } else if (e.key === "ArrowLeft") {
-        if (e.target.previousElementSibling) {
-          e.target.previousElementSibling.focus();
-        
-        }
-      } else if (e.key === "Enter") {
-        e.target.click();
-      }
-    });
-  </script>
+  <script src="menubar.js"></script>
 </body>
 </html>
