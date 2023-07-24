@@ -54,17 +54,19 @@ const menu = document.getElementById("menu");
       }
     } else if (e.key === "Enter") {
       e.target.click();
-      // Overview.focus();
-      // Apply.focus();
-  
-    } else if (e.key === "Escape") {
+      Overview.focus();
+      Apply.focus();
+    
+}
+     else if (e.key === "Escape") {
+      e.target.click();
       document.getElementById('content2').style.display = 'none';
-      menu2.setAttribute('aria-expanded', 'false');
-      content2.focus()
+      content2.setAttribute('aria-expanded', 'false');
       document.getElementById('content3').style.display = 'none';
-      menu3.setAttribute('aria-expanded', 'false');
+      content3.setAttribute('aria-expanded', 'false');
+      parentElement.querySelector('a').focus();
+
     }
-      
  
   });
 const content2 = document.getElementById("content2");
