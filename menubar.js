@@ -59,7 +59,7 @@ const menu = document.getElementById("menu");
     
 }
      else if (e.key === "Escape") {
-      e.target.click();
+      e.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.focus();
       document.getElementById('content2').style.display = 'none';
       content2.setAttribute('aria-expanded', 'false');
       document.getElementById('content3').style.display = 'none';
