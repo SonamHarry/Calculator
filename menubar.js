@@ -9,7 +9,7 @@ function tabClick(menubar) {
   menu1.setAttribute("tabindex", "-1");
   menu2.setAttribute("tabindex", "-1");
   menu3.setAttribute("tabindex", "-1");
-  menu1.setAttribute("aria-expanded", "false");
+  // menu1.setAttribute("aria-expanded", "false");
   menu2.setAttribute("aria-expanded", "false");
   menu3.setAttribute("aria-expanded", "false");
   // x.style.display = "none";
@@ -18,7 +18,7 @@ function tabClick(menubar) {
 
   if (menubar === 1) {
     // x.style.display = "block";
-    menu1.setAttribute("aria-expanded", "true");
+    // menu1.setAttribute("aria-expanded", "true");
     menu1.setAttribute("tabindex", "0");
     menu1.focus();
   } else if (menubar === 2) {
