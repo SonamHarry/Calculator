@@ -59,6 +59,7 @@ const menu = document.getElementById("menu");
     
 }
      else if (e.key === "Escape") {
+      // e.target.click();
       e.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.focus();
       document.getElementById('content2').style.display = 'none';
       content2.setAttribute('aria-expanded', 'false');
@@ -77,16 +78,16 @@ content2.addEventListener("keydown", function (e) {
   if (e.key === "ArrowUp") {
     const previousElement = currentOption.previousElementSibling;
     if (previousElement) {
-      previousElement.querySelector('a').focus();
-      previousElement.setAttribute("aria-expanded", "true");
+      currentOption.querySelector('a').focus();
+      currentOption.setAttribute("aria-expanded", "true");
       previousElement.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     } else {
       const lastElement = currentOption.parentElement.lastElementChild;
       lastElement.querySelector('a').focus();
-      lastElement.setAttribute("aria-expanded", "true");
-      lastElement.setAttribute("tabindex", "0");
+      currentOption.setAttribute("aria-expanded", "true");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     }
@@ -94,15 +95,15 @@ content2.addEventListener("keydown", function (e) {
     const nextElement = currentOption.nextElementSibling;
     if (nextElement) {
      nextElement.querySelector('a').focus();
-      nextElement.setAttribute("aria-expanded", "true");
-      nextElement.setAttribute("tabindex", "0");
+     currentOption.setAttribute("aria-expanded", "true");
+     currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     } else {
       const firstElement = currentOption.parentElement.firstElementChild;
       firstElement.querySelector('a').focus();
-      firstElement.setAttribute("aria-expanded", "true");
-      firstElement.setAttribute("tabindex", "0");
+      currentOption.setAttribute("aria-expanded", "true");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     }
@@ -121,15 +122,15 @@ content3.addEventListener("keydown", function (e) {
     const previousElement = currentOption.previousElementSibling;
     if (previousElement) {
       previousElement.querySelector('a').focus();
-      previousElement.setAttribute("aria-expanded", "true");
-      previousElement.setAttribute("tabindex", "0");
+      currentOption.setAttribute("aria-expanded", "true");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     } else {
       const lastElement = currentOption.parentElement.lastElementChild;
       lastElement.querySelector('a').focus();
-      lastElement.setAttribute("aria-expanded", "true");
-      lastElement.setAttribute("tabindex", "0");
+      currentOption.setAttribute("aria-expanded", "true");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
 
@@ -138,15 +139,15 @@ content3.addEventListener("keydown", function (e) {
     const nextElement = currentOption.nextElementSibling;
     if (nextElement) {
      nextElement.querySelector('a').focus();
-      nextElement.setAttribute("aria-expanded", "true");
-      nextElement.setAttribute("tabindex", "0");
+     currentOption.setAttribute("aria-expanded", "true");
+     currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     } else {
       const firstElement = currentOption.parentElement.firstElementChild;
       firstElement.querySelector('a').focus();
-      firstElement.setAttribute("aria-expanded", "true");
-      firstElement.setAttribute("tabindex", "0");
+      currentOption.setAttribute("aria-expanded", "true");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     }
