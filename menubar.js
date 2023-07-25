@@ -35,41 +35,41 @@ function tabClick(menubar) {
 }
 const menu = document.getElementById("menu");
 
-  menu.addEventListener("keydown", e => {
-    if (e.key === "ArrowRight") {
-      const nextMenuItem = e.target.parentElement.nextElementSibling;
-      if (nextMenuItem) {
-        const anchor = nextMenuItem.querySelector("a");
-        if (anchor) {
-          anchor.focus();
-        }
+menu.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") {
+    const nextMenuItem = e.target.parentElement.nextElementSibling;
+    if (nextMenuItem) {
+      const anchor = nextMenuItem.querySelector("a");
+      if (anchor) {
+        anchor.focus();
       }
-    } else if (e.key === "ArrowLeft") {
-      const prevMenuItem = e.target.parentElement.previousElementSibling;
-      if (prevMenuItem) {
-        const anchor = prevMenuItem.querySelector("a");
-        if (anchor) {
-          anchor.focus();
-        }
-      }
-    } else if (e.key === "Enter") {
-      e.target.click();
-      Overview.focus();
-      Apply.focus();
-    
-}
-     else if (e.key === "Escape") {
-      // e.target.click();
-      e.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.focus();
-      document.getElementById('content2').style.display = 'none';
-      menu2.setAttribute('aria-expanded', 'false');
-      document.getElementById('content3').style.display = 'none';
-      menu3.setAttribute('aria-expanded', 'false');
-      parentElement.querySelector('a').focus();
-
     }
- 
-  });
+  } else if (e.key === "ArrowLeft") {
+    const prevMenuItem = e.target.parentElement.previousElementSibling;
+    if (prevMenuItem) {
+      const anchor = prevMenuItem.querySelector("a");
+      if (anchor) {
+        anchor.focus();
+      }
+    }
+  } else if (e.key === "Enter" || e.key === "ArrowDown" || e.key === " ") {
+    e.target.click();
+    Overview.focus();
+    Apply.focus();
+
+  }
+  else if (e.key === "Escape") {
+    // e.target.click();
+    e.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.focus();
+    document.getElementById('content2').style.display = 'none';
+    menu2.setAttribute('aria-expanded', 'false');
+    document.getElementById('content3').style.display = 'none';
+    menu3.setAttribute('aria-expanded', 'false');
+    parentElement.querySelector('a').focus();
+
+  }
+
+});
 const content2 = document.getElementById("content2");
 const content3 = document.getElementById("content3");
 
@@ -94,9 +94,9 @@ content2.addEventListener("keydown", function (e) {
   } else if (e.key === "ArrowDown") {
     const nextElement = currentOption.nextElementSibling;
     if (nextElement) {
-     nextElement.querySelector('a').focus();
-     currentOption.setAttribute("aria-expanded", "true");
-     currentOption.setAttribute("tabindex", "0");
+      nextElement.querySelector('a').focus();
+      currentOption.setAttribute("aria-expanded", "true");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     } else {
@@ -111,9 +111,9 @@ content2.addEventListener("keydown", function (e) {
     content2.style.display = 'none';
     menu2.setAttribute('aria-expanded', 'false');
     menu3.focus();
-   
+
   }
-  
+
 });
 
 content3.addEventListener("keydown", function (e) {
@@ -138,9 +138,9 @@ content3.addEventListener("keydown", function (e) {
   } else if (e.key === "ArrowDown") {
     const nextElement = currentOption.nextElementSibling;
     if (nextElement) {
-     nextElement.querySelector('a').focus();
-     currentOption.setAttribute("aria-expanded", "true");
-     currentOption.setAttribute("tabindex", "0");
+      nextElement.querySelector('a').focus();
+      currentOption.setAttribute("aria-expanded", "true");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     } else {
