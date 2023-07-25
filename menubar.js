@@ -52,11 +52,20 @@ menu.addEventListener("keydown", e => {
         anchor.focus();
       }
     }
-  } else if (e.key === "Enter" || e.key === "ArrowDown" || e.key === " ") {
+  } else if (e.key === "Enter" || e.key === " ") {
     e.target.click();
     Overview.focus();
     Apply.focus();
-
+  }
+  else if (e.key === "ArrowDown") {
+    const currentMenuItem = e.target.parentElement;
+    const submenu = currentMenuItem.querySelector(".about-us") || currentMenuItem.querySelector(".contact");
+    if (submenu) {
+      submenu.style.display = "block";
+      submenu.setAttribute("aria-expanded", "true");
+      submenu.setAttribute("tabindex", "0");
+      submenu.querySelector("a").focus();
+    }
   }
   else if (e.key === "Escape") {
     // e.target.click();
@@ -72,6 +81,7 @@ menu.addEventListener("keydown", e => {
 });
 const content2 = document.getElementById("content2");
 const content3 = document.getElementById("content3");
+
 
 content2.addEventListener("keydown", function (e) {
   const currentOption = e.target.parentElement;
@@ -155,5 +165,24 @@ content3.addEventListener("keydown", function (e) {
     content3.style.display = 'none';
     menu3.setAttribute('aria-expanded', 'false');
     menu2.focus();
+  }
+});
+
+const homeLink = document.querySelector(".home a");
+
+homeLink.addEventListener("focus", () => {
+  const aboutUsMenu = document.querySelector(".about-us");
+  const admissionsMenu = document.querySelector(".contact");
+
+  if (aboutUsMenu) {
+    aboutUsMenu.style.display = "none";
+    aboutUsMenu.setAttribute("aria-expanded", "false");
+    aboutUsMenu.setAttribute("tabindex", "-1");
+  }
+
+  if (admissionsMenu) {
+    admissionsMenu.style.display = "none";
+    admissionsMenu.setAttribute("aria-expanded", "false");
+    admissionsMenu.setAttribute("tabindex", "-1");
   }
 });
