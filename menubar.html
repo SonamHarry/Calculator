@@ -264,6 +264,16 @@ content3.addEventListener("keydown", function (e) {
     menu2.focus();
   }
 });
+const homeLink = document.querySelector(".home a");
+
+homeLink.addEventListener("focus", () => {
+  const submenus = document.querySelectorAll(".about-us, .contact");
+  submenus.forEach(submenu => {
+    submenu.style.display = "none";
+    submenu.setAttribute("aria-expanded", "false");
+    submenu.setAttribute("tabindex", "-1");
+  });
+});
   </script>
 </body>
 
