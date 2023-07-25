@@ -78,9 +78,9 @@ content2.addEventListener("keydown", function (e) {
   if (e.key === "ArrowUp") {
     const previousElement = currentOption.previousElementSibling;
     if (previousElement) {
-      currentOption.querySelector('a').focus();
+      previousElement.querySelector('a').focus();
       currentOption.setAttribute("aria-expanded", "true");
-      previousElement.setAttribute("tabindex", "0");
+      currentOption.setAttribute("tabindex", "0");
       currentOption.setAttribute("aria-expanded", "false");
       currentOption.setAttribute("tabindex", "-1");
     } else {
