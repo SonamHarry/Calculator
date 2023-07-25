@@ -62,9 +62,9 @@ const menu = document.getElementById("menu");
       // e.target.click();
       e.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.focus();
       document.getElementById('content2').style.display = 'none';
-      content2.setAttribute('aria-expanded', 'false');
+      menu2.setAttribute('aria-expanded', 'false');
       document.getElementById('content3').style.display = 'none';
-      content3.setAttribute('aria-expanded', 'false');
+      menu3.setAttribute('aria-expanded', 'false');
       parentElement.querySelector('a').focus();
 
     }
