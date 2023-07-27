@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+     } else if (e.key === "ArrowRight") {
+        // Show the submenu (HTML) and set focus on the first submenu item
+        toggleSubmenu(content4);
+        const firstSubmenuItem = content4.querySelector("a");
+        firstSubmenuItem.focus();
+      } else if (e.key === "ArrowLeft") {
+        // Hide the submenu (HTML) and set focus back to the "Tutorials" menuitem (menu2)
+        content4.style.display = 'none';
+        menu4.setAttribute('aria-expanded', 'false');
+        menu4.focus();
+      }
+
+
+
+
+    } else if (e.key === "ArrowRight") {
+        // Show the submenu (Quizzes) and set focus on the first submenu item
+        toggleSubmenu(content5);
+        const firstSubmenuItem = content5.querySelector("a");
+        firstSubmenuItem.focus();
+      } else if (e.key === "ArrowLeft") {
+        // Hide the submenu (Quizzes) and set focus back to the "Services" menuitem (menu3)
+        content5.style.display = 'none';
+        menu5.setAttribute('aria-expanded', 'false');
+        menu5.focus();
+      }
+</script>
+<body>
+    
+</body>
+</html>
+

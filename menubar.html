@@ -28,7 +28,9 @@
 
     /* submenu items hidden */
     .about-us,
-    .contact {
+    .contact,
+    .HTML,
+    .Quizzes {
       display: none;
       position: absolute;
       top: 100%;
@@ -40,7 +42,9 @@
 
     /* space between submenu items */
     .about-us li,
-    .contact li {
+    .contact li,
+    .HTML li,
+    .Quizzes li {
       padding: 5px 0;
     }
 
@@ -54,9 +58,26 @@
       padding: 0;
     }
 
-    .about-us:hover,
-    .contact:hover {
-      display: block;
+    .HTML {
+      right: 100px;
+    }
+
+    /* Add this CSS block to position the HTML submenu properly */
+    .HTML {
+      right: auto;
+      left: 250%;
+      /* Position the HTML submenu to the right of the HTML menu item */
+      top: 0;
+      /* Align the top of the submenu with the top of the HTML menu item */
+    }
+
+    /* Add this CSS block to position the Quizzes submenu properly */
+    .Quizzes {
+      right: auto;
+      left: 250%;
+      /* Position the Quizzes submenu to the right of the Quizzes menu item */
+      top: 0;
+      /* Align the top of the submenu with the top of the Quizzes menu item */
     }
   </style>
 </head>
@@ -68,25 +89,75 @@
     <ul role="menubar">
       <li role="none"><a href="#home" aria-label="Home" id="menu1" role="menuitem" onclick="tabClick(1)"
           tabindex="0">Home</a></li>
-      <li role="none"><a href="#aboutus" aria-label="About us" id="menu2" role="menuitem" aria-expanded="false"
-          onclick="tabClick(2)" tabindex="-1">About us</a>
+      <li role="none"><a href="#Tutorials" aria-label="tutorials" id="menu2" role="menuitem" aria-expanded="false"
+          onclick="togglemenu(content2)" tabindex="-1">Tutorials</a>
         <span class="dropdown-icon">&#9662;</span>
         <div class="about-us" id="content2" role="none">
           <ul role="menu">
-            <li role="none"><a role="menuitem" id="Overview" href="#" tabindex="0">Overview</a></li>
-            <li role="none"><a role="menuitem" href="#" tabindex="-1">Administration</a></li>
-            <li role="none"><a role="menuitem" href="#" tabindex="-1">Facts</a></li>
+            <li role="none"><a role="menuitem" id="menu4" onclick="toggleSubmenu(content4)" href="#"
+                tabindex="0">HTML</a>
+              <span class="dropdown-icon">&#5125;</span>
+              <div class="HTML" id="content4" role="none" tabindex="0">
+                <ul role="menu" aria-label="Facts">
+                  <li role="none" tabindex="0">
+                    <a role="menuitem" id="Introduction" 
+                      href="https://www.w3schools.com/html/html_intro.asp">
+                      HTML Introduction
+                    </a>
+                  </li>
+                  <li role="none" tabindex="0">
+                    <a role="menuitem" href="https://www.w3schools.com/html/html_editors.asp">
+                      HTML Editors
+                    </a>
+                  </li>
+                  <li role="none" tabindex="0">
+                    <a role="menuitem" href="https://www.w3schools.com/html/html_basic.asp">
+                      HTML Basic
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li role="none"><a role="menuitem" href="https://www.w3schools.com/css/default.asp" tabindex="-1">CSS</a>
+            </li>
+            <li role="none"><a role="menuitem" href="https://www.w3schools.com/js/default.asp"
+                tabindex="-1">JAVASCRIPT</a></li>
           </ul>
         </div>
       </li>
-      <li role="none"><a href="#Admissions" aria-label="Admissions" id="menu3" role="menuitem" aria-expanded="false"
-          onclick="tabClick(3)" tabindex="-1">Admissions</a>
+      <li role="none"><a href="#Services" aria-label="Services" id="menu3" role="menuitem" aria-expanded="false"
+          onclick="togglemenu(content3)" tabindex="-1">Services</a>
         <span class="dropdown-icon">&#9662;</span>
         <div class="contact" id="content3" role="none">
           <ul role="menu">
-            <li role="none"><a role="menuitem" id="Apply" href="#" tabindex="0">Apply</a></li>
-            <li role="none"><a role="menuitem" id="Tuition" href="#" tabindex="-1">Tuition</a></li>
-            <li role="none"><a role="menuitem" id="Signup" href="#" tabindex="-1">Sign up</a></li>
+            <li role="none"><a role="menuitem" id="menu5" onclick="toggleSubmenu(content5)" href="#"
+                tabindex="0">Quizzes</a>
+              <span class="dropdown-icon">&#5125;</span>
+              <div class="Quizzes" id="content5" role="none">
+                <ul role="menu" aria-label="Facts">
+                  <li role="none" >
+                    <a role="menuitem"  id="Quzz-html"
+                      href="https://www.w3schools.com/quiztest/quiztest.asp?qtest=HTML">
+                      Quizz HTML
+                    </a>
+                  </li>
+                  <li role="none" >
+                    <a role="menuitem" href="https://www.w3schools.com/quiztest/quiztest.asp?qtest=CSS">
+                      Quizz CSS
+                    </a>
+                  </li>
+                  <li role="none" >
+                    <a role="menuitem" href="https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS">
+                      Quizz JAVASCRIPT
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li role="none"><a role="menuitem" id="Tuition" href="https://www.w3schools.com/tutorials/index.php"
+                tabindex="-1">Free tutorials</a></li>
+            <li role="none"><a role="menuitem" id="Signup" href="https://www.w3schools.com/references/index.php"
+                tabindex="-1">References</a></li>
           </ul>
         </div>
       </li>
@@ -96,7 +167,10 @@
     <h1>This is my <a href="#Home">home</a> page</h1>
   </div>
 
-  <script src="menubar.js"></script>
+  <script src="menubar.js">
+    
+
+  </script>
 </body>
 
 </html>
