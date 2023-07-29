@@ -92,31 +92,31 @@
           onclick="tabClick(1)" tabindex="0">Home</a></li>
 
       <!-- Tutorials Menu Item -->
-      <li role="none"><a href="#Tutorials" class="Mainmenu2" aria-label="tutorials" id="menu2" role="menuitem"
-          aria-expanded="false" onclick="togglemenu(content2)" tabindex="-1">Tutorials</a>
+      <li role="none"><a href="#Tutorials" class="Mainmenu2 hasSubMenu" aria-label="tutorials" id="menu2" role="menuitem"
+          aria-expanded="false" aria-haspopup="true" onclick="togglemenu(content2)" tabindex="-1">Tutorials</a>
         <span class="dropdown-icon">&#9662;</span>
         <div class="about-us" id="content2" role="none">
           <ul role="menu">
 
             <!-- Tutorial Submenu Item -->
             <li role="none"><a role="menuitem" id="menu4" onclick="toggleSubmenu(content4)" href="#"
-                tabindex="0">HTML</a>
+                tabindex="0" aria-expanded="false" aria-haspopup="true">HTML</a>
               <span class="dropdown-icon">&#5125;</span>
-              <div class="HTML" id="content4" role="none" tabindex="0">
+              <div class="HTML" id="content4" role="none">
                 <ul role="menu" aria-label="Facts">
 
                   <!-- HTML Submenu items -->
-                  <li role="none" tabindex="0">
+                  <li role="none">
                     <a role="menuitem" id="Introduction" href="https://www.w3schools.com/html/html_intro.asp">
                       HTML Introduction
                     </a>
                   </li>
-                  <li role="none" tabindex="0">
+                  <li role="none">
                     <a role="menuitem" href="https://www.w3schools.com/html/html_editors.asp">
                       HTML Editors
                     </a>
                   </li>
-                  <li role="none" tabindex="0">
+                  <li role="none">
                     <a role="menuitem" href="https://www.w3schools.com/html/html_basic.asp">
                       HTML Basic
                     </a>
@@ -133,15 +133,15 @@
       </li>
 
       <!-- Services Menu Item -->
-      <li role="none"><a href="#Services" class="Mainmenu3" aria-label="Services" id="menu3" role="menuitem"
-          aria-expanded="false" onclick="togglemenu(content3)" tabindex="-1">Services</a>
+      <li role="none"><a href="#Services" class="Mainmenu3 hasSubMenu" aria-label="Services" id="menu3" role="menuitem"
+          aria-expanded="false" onclick="togglemenu(content3)" tabindex="-1" aria-haspopup="true">Services</a>
         <span class="dropdown-icon">&#9662;</span>
         <div class="contact" id="content3" role="none">
           <ul role="menu">
 
             <!-- Services Menu Item -->
             <li role="none"><a role="menuitem" id="menu5" onclick="toggleSubmenu(content5)" href="#"
-                tabindex="0">Quizzes</a>
+                tabindex="0" aria-expanded="true" aria-haspopup="true">Quizzes</a>
               <span class="dropdown-icon">&#5125;</span>
               <div class="Quizzes" id="content5" role="none">
                 <ul role="menu" aria-label="Facts">
